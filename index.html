@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shareble & Printable Resume Builder</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h1>Shareable Resume Builder</h1>
+    <form id="resumeForm">
+      <div class="form-group">
+        <input type="text" id="username" placeholder="Username" required />
+      </div>
+      <div class="form-group">
+        <input type="text" id="name" placeholder="Full Name" required />
+      </div>
+      <div class="form-group">
+        <input type="text" id="surname" placeholder="Surname" required />
+      </div>
+      <div class="form-group">
+        <input type="text" id="fatherName" placeholder="Father's Name" required />
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" placeholder="Email" required />
+      </div>
+      <div class="form-group">
+        <input type="tel" id="mobile" placeholder="Mobile Number" required />
+      </div>
+      <div class="form-group">
+        <textarea id="education" placeholder="Education" rows="2"></textarea>
+      </div>
+      <div class="form-group">
+        <textarea id="skills" placeholder="Skills" rows="2"></textarea>
+      </div>
+      <div class="form-group">
+        <textarea id="experience" placeholder="Experience" rows="2"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="profilePic" class="file-label">Upload Profile Picture</label>
+        <input type="file" id="profilePic" accept="image/*" required />
+      </div>
+      <button type="button" onclick="generateResume()">Generate Resume</button>
+    </form>
+  </div>
+
+  <div class="resume-container" id="resumeContainer">
+    <h2>Your Resume</h2>
+    <div class="resume" id="resumeContent">
+      <p><strong>Name:</strong> <span id="resName"></span> <button onclick="editField('resName')">Edit</button></p>
+      <p><strong>Surname:</strong> <span id="resSurname"></span> <button onclick="editField('resSurname')">Edit</button></p>
+      <p><strong>Father's Name:</strong> <span id="resFatherName"></span> <button onclick="editField('resFatherName')">Edit</button></p>
+      <p><strong>Email:</strong> <span id="resEmail"></span> <button onclick="editField('resEmail')">Edit</button></p>
+      <p><strong>Mobile:</strong> <span id="resMobile"></span> <button onclick="editField('resMobile')">Edit</button></p>
+      <p><strong>Education:</strong> <span id="resEducation"></span> <button onclick="editField('resEducation')">Edit</button></p>
+      <p><strong>Skills:</strong> <span id="resSkills"></span> <button onclick="editField('resSkills')">Edit</button></p>
+      <p><strong>Experience:</strong> <span id="resExperience"></span> <button onclick="editField('resExperience')">Edit</button></p>
+      <img id="resProfilePic" src="" alt="Profile Picture" />
+    </div>
+    <div id="resumeUrlContainer">
+      <h3>Resume URL</h3>
+      <p id="resumeUrl"></p>
+    </div>
+    <button onclick="printResume()">Print Resume as PDF</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
